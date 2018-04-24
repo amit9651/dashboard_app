@@ -10,11 +10,8 @@
 
 {% for field in form %}
   <div class="form-group">
-    {{ field.label_tag }}
-
-    {% if form.is_bound %}
-      {% if field.errors %}
-        {% render_field field class="form-control is-invalid" %}
+        {{ field.label_tag }}
+        {% render_field field class="field"|input %}
         {% for error in field.errors %}
           <div class="invalid-feedback">
             {{ error }}
